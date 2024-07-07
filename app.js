@@ -5,11 +5,17 @@ const app = express();
 // server
 const server = require('http').Server(app);
 
+// socket.io
+const io = require('socket.io')(server);
+io.on('connection', (socket) => {
+  console.log('new user connected!');
+});
+
 // handlebars
 const { engine } = require('express-handlebars');
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
-app.use('/static', express.static('static'));
+app.use('/public', express.static('public'));
 
 // app
 app.get('/', (req, res) => {
