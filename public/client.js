@@ -3,6 +3,16 @@ $(document).ready(() => {
   // connect to the socket.io server
   const socket = io.connect();
 
+  const groupdraft = $('#groupdraft-textarea');
+  groupdraft.on('keyup', function () {
+    const text = $(this).val();
+    socket.emit('text change', text);
+  });
+
+  socket.on('text change', (text) => {
+    groupdraft.val(text);
+  });
+
   // socket emitter
   // uses socket.emit
   $('#create-user-btn').click((e) => {
@@ -12,6 +22,8 @@ $(document).ready(() => {
       // emit to the server (from the client) the new user
       socket.emit('new user', username);
       $('.username-form').remove();
+      groupdraft.show();
+      groupdraft.css('display', 'flex');
     }
   });
 

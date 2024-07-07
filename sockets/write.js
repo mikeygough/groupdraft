@@ -9,4 +9,8 @@ module.exports = (io, socket) => {
     // uses io.emit
     io.emit('new user', username);
   });
+
+  socket.on('text change', (text) => {
+    io.emit('text change', text);
+  });
 };
