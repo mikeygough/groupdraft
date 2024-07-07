@@ -1,0 +1,35 @@
+* {
+  color: white;
+  font-family: helvetica;
+}
+
+body {
+  background-color: black;
+}
+
+.username-form {
+  display: flex;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#username-input {
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  color: black;
+}
+
+#create-user-btn {
+  width: 45%;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  color: black;
+}

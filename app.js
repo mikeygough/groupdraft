@@ -9,6 +9,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 io.on('connection', (socket) => {
   console.log('new user connected!');
+  require('./sockets/write.js')(io, socket);
 });
 
 // handlebars
