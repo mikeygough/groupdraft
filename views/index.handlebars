@@ -1,22 +1,19 @@
-<html>
-  <head>
-    <meta charset='utf-8' />
-    <title>GroupDraft</title>
-    <script
-      src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
-    ></script>
-    <script src='socket.io/socket.io.js'></script>
-    <script src='/public/client.js'></script>
-  </head>
-  <body>
-    <h1>Hiiiii</h1>
-    <form class="username-form">
-      <input id="username-input" placeholder="Username"></input>
-      <button id="create-user-btn">Join GroupDraft</button>
-    </form>
+<main>
+	
+	{{!-- join groupdraft --}}
+	<form class="username-form">
+		<input id="username-input" placeholder="Username"></input>
+		<button id="create-user-btn">Join GroupDraft</button>
+	</form>
 
-    <textarea id="groupdraft-textarea" name="groupdraft" rows="5" cols="33"></textarea>
+	{{!-- textarea --}}
+	<div id="groupdraft-textarea-container">
+		<textarea id="groupdraft-textarea" name="groupdraft" rows="5" cols="33"></textarea>
+	</div>
 
-    <button id="send-email-btn">Click Me to send email</button>
-  </body>
-</html>
+	{{!-- send email --}}
+	<div id="send-email-btn-container">
+		<button id="send-email-btn">Email your GroupDraft</button>
+	</div>
+
+</main>

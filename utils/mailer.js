@@ -18,8 +18,8 @@ module.exports.sendMail = (text) => {
   nodemailerMailgun
     .sendMail({
       from: 'no-reply@example.com',
-      to: 'mikey@hey.com', // An array if you have multiple recipients.
-      subject: 'Your GroupDraft is ready!',
+      to: 'mikey@hey.com', // ensure this email is authorized in mailgun
+      subject: 'Your GroupDraft is Ready!',
       template: {
         name: 'email.handlebars',
         engine: 'handlebars',
