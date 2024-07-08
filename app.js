@@ -13,10 +13,11 @@ const io = require('socket.io')(server);
 
 // initial state
 let onlineUsers = {};
+let groupDraft = { text: '' };
 
 io.on('connection', (socket) => {
   console.log('new user connected!');
-  require('./sockets/write.js')(io, socket, onlineUsers);
+  require('./sockets/write.js')(io, socket, onlineUsers, groupDraft);
 });
 
 // handlebars

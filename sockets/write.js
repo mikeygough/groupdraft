@@ -1,12 +1,14 @@
 const mailer = require('../utils/mailer');
 
-module.exports = (io, socket, onlineUsers) => {
+module.exports = (io, socket, onlineUsers, groupDraft) => {
   // socket listeners
 
   // listen for 'new user' socket emits from the client
   socket.on('new user', (username) => {
     // save the username as key to access the user's socket id
     onlineUsers[username] = socket.id;
+
+    console.log(onlineUsers);
 
     // save the username to socket as well.
     socket['username'] = username;
@@ -21,6 +23,11 @@ module.exports = (io, socket, onlineUsers) => {
     socket.emit('get online users', onlineUsers);
   });
 
+  socket.on('get groupdraft', () => {
+    // send over the text
+    socket.emit('get groupdraft', groupDraft['text']);
+  });
+
   socket.on('disconnect', () => {
     // delete the user by using the username we saved to the socket
     delete onlineUsers[socket.username];
@@ -28,6 +35,7 @@ module.exports = (io, socket, onlineUsers) => {
   });
 
   socket.on('text change', (text) => {
+    groupDraft['text'] = text;
     io.emit('text change', text);
   });
 

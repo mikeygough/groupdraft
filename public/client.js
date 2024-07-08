@@ -25,6 +25,16 @@ $(document).ready(() => {
   });
 
   // socket emitter
+  // - get groupdraft
+  socket.emit('get groupdraft');
+
+  // socket listener
+  // - update groupdraft UI
+  socket.on('get groupdraft', (text) => {
+    groupdraft.val(text);
+  });
+
+  // socket emitter
   // - groupdraft-textarea change
   groupdraft.on('keyup', function () {
     const text = $(this).val();
