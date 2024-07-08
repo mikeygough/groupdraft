@@ -1,3 +1,5 @@
+const mailer = require('../utils/mailer');
+
 module.exports = (io, socket) => {
   // socket listeners
 
@@ -12,5 +14,10 @@ module.exports = (io, socket) => {
 
   socket.on('text change', (text) => {
     io.emit('text change', text);
+  });
+
+  socket.on('send email', (user, text) => {
+    mailer.sendMail(user, text);
+    io.emit('send email');
   });
 };

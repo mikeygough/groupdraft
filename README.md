@@ -8,6 +8,6 @@ user stories:
 
 - i can start typing in the text area. anything i type is viewable and editable by all other users currently on the application.
 
-- i can email a copy of what the group has written at any point by clicking 'email'.
+- i can email a copy of what the group has written at any point by clicking 'email'. (note, this application relies on API keys from MailGun. currently, groupdraft uses a MailGun sandbox domain which only sends to authorized URLs).
 
 made by mikey gough
