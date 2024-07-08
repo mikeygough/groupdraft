@@ -50,5 +50,14 @@ $(document).ready(() => {
   $('#send-email-btn').click((e) => {
     const text = groupdraft.val();
     socket.emit('send email', text);
+
+    Toastify({
+      text: 'Email Sent! 💌',
+      duration: 3000,
+      close: true,
+      gravity: 'top',
+      position: 'right',
+      backgroundColor: 'linear-gradient(to right, #00b09b, #96c93d)',
+    }).showToast();
   });
 });
