@@ -6,7 +6,7 @@ html {
 
 body {
   height: 100%;
-  padding: 0;
+  padding: 1rem;
   margin: 0;
   background-color: black;
 }
@@ -14,11 +14,12 @@ body {
 .wrapper {
   min-height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
 }
 
 footer {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .username-form {
@@ -49,6 +50,14 @@ button {
 
 #create-user-btn {
   width: 45%;
+}
+
+#online-users-container {
+  display: none;
+}
+
+li::marker {
+  color: #00ff00;
 }
 
 #groupdraft-textarea-container {
