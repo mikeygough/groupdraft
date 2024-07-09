@@ -1,3 +1,6 @@
+// env
+require('dotenv').config();
+
 // mailgun
 const nodemailer = require('nodemailer');
 const mg = require('nodemailer-mailgun-transport');
@@ -18,7 +21,7 @@ module.exports.sendMail = (text) => {
   nodemailerMailgun
     .sendMail({
       from: 'no-reply@example.com',
-      to: 'mikey@hey.com', // ensure this email is authorized in mailgun
+      to: process.env.EMAIL, // ensure this email is authorized in mailgun
       subject: 'Your GroupDraft is Ready!',
       template: {
         name: 'email.handlebars',
