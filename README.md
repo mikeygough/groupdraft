@@ -42,6 +42,8 @@ update your `.env` to include your api key, the sandbox mailgun domain and the e
 
 #### demo
 
+https://github.com/mikeygough/groupdraft/assets/26821806/29fbf759-000f-4cf6-b5ae-5666389461dd
+
 made with 🖤 by mikey gough
 
 2024
